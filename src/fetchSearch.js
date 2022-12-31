@@ -4,7 +4,7 @@ async function fetchSearch({ queryKey }) {
   const { animal, location, breed } = queryKey[1];
   // Makes a GET request to the specified URL with the query parameters `animal`, `location`, and `breed` set to the corresponding variables
   const res = await fetch(
-    `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+    `https://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
   );
 
   // If the HTTP response status of the request is not "okay" (not in the 200-299 range), throws an error with a message that includes the variables `animal`, `location`, and `breed`

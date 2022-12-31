@@ -45,7 +45,7 @@ const Carousel = (props) => {
   const [active, setActive] = React.useState(0);
 
   const defaultProps = {
-    images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
+    images: ["https://pets-images.dev-apis.com/pets/none.jpg"],
   };
 
   const handleIndexClick = (event) => {
