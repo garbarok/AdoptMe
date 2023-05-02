@@ -19,23 +19,23 @@ const queryClient = new QueryClient({
 
 // Defines the `App` component, which renders a `BrowserRouter` component with a `QueryClientProvider` component that wraps a header and a set of routes
 const App = () => {
-  const adoptedPets = useState(null);
+  const adoptedPet = useState(null);
   return (
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <AdoptedPetContext.Provider value={adoptedPets}>
-          <header>
-            {/* Renders a `Link` component that links to the root path of the application */}
-            <Link to="/">Adopt Me!</Link>
-          </header>
-          {/* Renders a `Routes` component with two `Route` components: one for the `/details/:id` path and one for the root path */}
-          <Routes>
-            <Route path="/details/:id" element={<Details />} />
-            <Route path="/" element={<SearchParams />} />
-          </Routes>
+    <div>
+      <BrowserRouter>
+        <AdoptedPetContext.Provider value={adoptedPet}>
+          <QueryClientProvider client={queryClient}>
+            <header>
+              <Link to="/">Adopt Me!</Link>
+            </header>
+            <Routes>
+              <Route path="/details/:id" element={<Details />} />
+              <Route path="/" element={<SearchParams />} />
+            </Routes>
+          </QueryClientProvider>
         </AdoptedPetContext.Provider>
-      </QueryClientProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 };
 
